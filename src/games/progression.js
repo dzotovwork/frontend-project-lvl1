@@ -28,7 +28,7 @@ export default function progressionGame() {
     correctAnswer = progression[hidenIndex];
     progression[hidenIndex] = '..';
     console.log(`Question: ${progression.join(' ')}`);
-    checkAnswer(getUserAnswer(), correctAnswer, name);
+    checkAnswer(getUserAnswer(), correctAnswer.toString(), name);
     correctAnswerCount += 1;
   }
   console.log(`Congratulations, ${name}!`);

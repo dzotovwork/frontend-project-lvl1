@@ -32,7 +32,7 @@ export default function calcGame() {
         break;
     }
     console.log(`Question: ${numberA} ${operation} ${numberB}`);
-    checkAnswer(getUserAnswer(), correctAnswer, name);
+    checkAnswer(getUserAnswer(), correctAnswer.toString(), name);
     correctAnswerCount += 1;
   }
   console.log(`Congratulations, ${name}!`);

@@ -27,7 +27,7 @@ export default function gcdGame() {
     numberA = getRandomInt(100);
     numberB = getRandomInt(100);
     console.log(`Question: ${numberA} ${numberB}`);
-    checkAnswer(getUserAnswer(), getTheDivisor(numberA, numberB), name);
+    checkAnswer(getUserAnswer(), getTheDivisor(numberA, numberB).toString(), name);
     correctAnswerCount += 1;
   }
   console.log(`Congratulations, ${name}!`);
