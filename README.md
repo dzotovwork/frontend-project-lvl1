@@ -11,3 +11,5 @@
 [демокаст gcd](https://asciinema.org/a/AT2vgR4pTjMl1C2Zb4nNEJLQC)
 
 [демокаст progression] (https://asciinema.org/a/4aoFCRuXLmLMkAdSj3Pei2dFO)
+
+[демокаст prime](https://asciinema.org/a/462Hn7ISM6PES8qez1c4k7dpY)
