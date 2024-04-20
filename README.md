@@ -5,3 +5,5 @@
 
 
 [демокаст brain-even](https://asciinema.org/a/8z5NI3HJ4AN2yHQ43VW14z62U)
+
+[демокаст brain-calc](https://asciinema.org/a/Tndxbbj0ge0omi5u4d6kmReBf)
