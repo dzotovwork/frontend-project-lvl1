@@ -1,4 +1,4 @@
-import { getRandomInt, getUserName, MAX_ATTEMPTS } from "..";
+import { getRandomInt, getUserName, getUserAnswer, MAX_ATTEMPTS } from "../index.js";
 
 export function evenGame() {
   const name = getUserName();
@@ -12,7 +12,7 @@ export function evenGame() {
     number = getRandomInt(100);
     correctAnswer = number % 2 == 0 ? 'yes' : 'no';
     console.log(`Question: ${number}`);
-    answer = readlineSync.question('Your answer: ');
+    answer = getUserAnswer();
     if (answer === correctAnswer) {
       console.log('Correct');
       correctAnswerCount++;

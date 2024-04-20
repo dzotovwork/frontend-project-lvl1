@@ -10,6 +10,10 @@ export function getUserName() {
 May I have your name? `);
 }
 
+export function getUserAnswer() {
+  return readlineSync.question('Your answer: ');
+}
+
 export function sayWrongAnswer(answer, correctAnswer, name) {
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
     Let 's try again, ${name}!`)

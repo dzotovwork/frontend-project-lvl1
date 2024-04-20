@@ -1,4 +1,4 @@
-import { getRandomInt, getUserName, MAX_ATTEMPTS, sayWrongAnswer } from "..";
+import { getRandomInt, getUserName, getUserAnswer, MAX_ATTEMPTS } from "../index.js";
 
 export function calcGame() {
   const name = getUserName()
@@ -27,7 +27,7 @@ export function calcGame() {
       break
     }
     console.log(`Question: ${numberA} ${operation} ${numberB}`);
-    answer = readlineSync.question('Your answer: ');
+    answer = getUserAnswer();
     if (answer == correctAnswer) {
       console.log('Correct');
       correctAnswerCount++;
