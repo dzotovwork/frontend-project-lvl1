@@ -1,32 +1,28 @@
 import { getRandomInt, getUserName, getUserAnswer, sayWrongAnswer, MAX_ATTEMPTS } from "../index.js";
 
-export function calcGame() {
+export function gcdGame() {
   const name = getUserName()
-  const operations = ['+', '-', '*']
-  let operation = null;
   let correctAnswer = null;
   let numberA = null;
   let numberB = null;
   let answer = null;
   console.log(`Hello, ${name}!`);
-  console.log('What is the result of the expression?');
+  console.log('Find the greatest common divisor of given numbers.');
+
   let correctAnswerCount = 0;
   while (correctAnswerCount !== MAX_ATTEMPTS) {
     numberA = getRandomInt(100);
     numberB = getRandomInt(100);
-    operation = operations[getRandomInt(3)]
-    switch (operation) {
-    case '+':
-      correctAnswer = numberA + numberB;
-      break
-    case '-':
-      correctAnswer = numberA - numberB;
-      break
-    case '*':
-      correctAnswer = numberA * numberB;
-      break
-    }
-    console.log(`Question: ${numberA} ${operation} ${numberB}`);
+    console.log(`Question: ${numberA} ${numberB}`);
+    correctAnswer = (() => {
+      // TODO цикл в цикле - плохо
+      // TODO мутировать плохо
+      while (numberA !== 0 && numberB !== 0) {
+        if (numberA > numberB) numberA = numberA % numberB
+        else numberB = numberB % numberA;
+      }
+      return numberA + numberB;
+    })();
     answer = getUserAnswer();
     // TODO не строго сравнение плохо
     if (answer == correctAnswer) {
