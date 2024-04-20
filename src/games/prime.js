@@ -2,7 +2,7 @@ import {
   getRandomInt,
   getUserName,
   getUserAnswer,
-  sayWrongAnswer,
+  checkAnswer,
   MAX_ATTEMPTS,
 } from '../index.js';
 
@@ -21,25 +21,16 @@ function isPrime(number) {
 }
 export default function primeGame() {
   const name = getUserName();
-  let correctAnswer = null;
   let number = null;
-  let answer = null;
   console.log(`Hello, ${name}!`);
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   let correctAnswerCount = 0;
   while (correctAnswerCount !== MAX_ATTEMPTS) {
     // +1 что б не попасть на 0
     number = getRandomInt(100) + 1;
-    correctAnswer = isPrime(number);
     console.log(`Question: ${number}`);
-    answer = getUserAnswer();
-    if (answer === correctAnswer) {
-      console.log('Correct');
-      correctAnswerCount += 1;
-    } else {
-      sayWrongAnswer(answer, correctAnswer, name);
-      process.exit();
-    }
+    checkAnswer(getUserAnswer(), isPrime(number), name);
+    correctAnswerCount += 1;
   }
   console.log(`Congratulations, ${name}!`);
 }

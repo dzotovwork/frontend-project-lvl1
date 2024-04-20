@@ -2,7 +2,7 @@ import {
   getRandomInt,
   getUserName,
   getUserAnswer,
-  sayWrongAnswer,
+  checkAnswer,
   MAX_ATTEMPTS,
 } from '../index.js';
 
@@ -13,7 +13,6 @@ export default function calcGame() {
   let correctAnswer = null;
   let numberA = null;
   let numberB = null;
-  let answer = null;
   console.log(`Hello, ${name}!`);
   console.log('What is the result of the expression?');
   let correctAnswerCount = 0;
@@ -33,14 +32,8 @@ export default function calcGame() {
         break;
     }
     console.log(`Question: ${numberA} ${operation} ${numberB}`);
-    answer = getUserAnswer();
-    if (answer === correctAnswer.toString()) {
-      console.log('Correct');
-      correctAnswerCount += 1;
-    } else {
-      sayWrongAnswer(answer, correctAnswer, name);
-      process.exit();
-    }
+    checkAnswer(getUserAnswer(), correctAnswer, name);
+    correctAnswerCount += 1;
   }
   console.log(`Congratulations, ${name}!`);
 }

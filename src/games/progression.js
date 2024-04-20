@@ -2,7 +2,7 @@ import {
   getRandomInt,
   getUserName,
   getUserAnswer,
-  sayWrongAnswer,
+  checkAnswer,
   MAX_ATTEMPTS,
 } from '../index.js';
 
@@ -14,7 +14,6 @@ export default function progressionGame() {
   let progression = null;
   let progressionStep = null;
   let correctAnswer = null;
-  let answer = null;
   let hidenIndex = null;
   console.log(`Hello, ${name}!`);
   console.log('What number is missing in the progression?');
@@ -29,14 +28,8 @@ export default function progressionGame() {
     correctAnswer = progression[hidenIndex];
     progression[hidenIndex] = '..';
     console.log(`Question: ${progression.join(' ')}`);
-    answer = getUserAnswer();
-    if (answer === correctAnswer.toString()) {
-      console.log('Correct');
-      correctAnswerCount += 1;
-    } else {
-      sayWrongAnswer(answer, correctAnswer, name);
-      process.exit();
-    }
+    checkAnswer(getUserAnswer(), correctAnswer, name);
+    correctAnswerCount += 1;
   }
   console.log(`Congratulations, ${name}!`);
 }
