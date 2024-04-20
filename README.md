@@ -9,3 +9,5 @@
 [демокаст brain-calc](https://asciinema.org/a/Tndxbbj0ge0omi5u4d6kmReBf)
 
 [демокаст gcd](https://asciinema.org/a/AT2vgR4pTjMl1C2Zb4nNEJLQC)
+
+[демокаст progression] (https://asciinema.org/a/4aoFCRuXLmLMkAdSj3Pei2dFO)
