@@ -16,5 +16,5 @@ export function getUserAnswer() {
 
 export function sayWrongAnswer(answer, correctAnswer, name) {
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-    Let 's try again, ${name}!`)
+Let 's try again, ${name}!`)
 }
