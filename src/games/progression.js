@@ -22,7 +22,7 @@ export function progressionGame() {
     hidenIndex = getRandomInt(progressionLength);
     correctAnswer = progression[hidenIndex];
     progression[hidenIndex] = `..`;
-    console.log(`Question: ${progression}`);
+    console.log(`Question: ${progression.join(' ')}`);
     answer = getUserAnswer();
     // TODO не строго сравнение плохо
     if (answer == correctAnswer) {
