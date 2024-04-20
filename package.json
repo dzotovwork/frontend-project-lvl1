@@ -21,10 +21,8 @@
         "readline-sync": "^1.4.10"
     },
     "devDependencies": {
-        "eslint": "^9.0.0",
-        "eslint-config-airbnb-base": "15.0.0",
-        "eslint-plugin-import": "2.29.1",
-        "@stylistic/eslint-plugin": "^1.7.2",
-        "@stylistic/eslint-plugin-js": "^1.7.2"
+        "eslint": "^8.57.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.29.1"
     }
 }

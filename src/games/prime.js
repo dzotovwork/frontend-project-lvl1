@@ -1,10 +1,25 @@
-import { getRandomInt, getUserName, getUserAnswer, sayWrongAnswer, MAX_ATTEMPTS } from "../index.js";
+import {
+  getRandomInt,
+  getUserName,
+  getUserAnswer,
+  sayWrongAnswer,
+  MAX_ATTEMPTS,
+} from '../index.js';
 
-function isprime(n) {
-
+function isPrime(number) {
+  // 1 - не простое число
+  if (number === 1) {
+    return 'no';
+  }
+  // перебираем возможные делители от 2 до sqrt(n)
+  for (let d = 2; d * d <= number; d++) {
+    // если разделилось нацело, то составное
+    if (number % d === 0) return 'no';
+  }
+  // если нет нетривиальных делителей, то простое
+  return 'yes';
 }
-
-export function primeGame() {
+export default function primeGame() {
   const name = getUserName();
   let correctAnswer = null;
   let number = null;
@@ -15,18 +30,7 @@ export function primeGame() {
   while (correctAnswerCount !== MAX_ATTEMPTS) {
     // +1 что б не попасть на 0
     number = getRandomInt(100) + 1;
-    correctAnswer = (() => {
-      if (number == 1) // 1 - не простое число
-        return 'no';
-      // перебираем возможные делители от 2 до sqrt(n)
-      for (let d = 2; d * d <= number; d++) {
-        // если разделилось нацело, то составное
-        if (number % d == 0)
-          return 'no';
-      }
-      // если нет нетривиальных делителей, то простое
-      return 'yes';
-    })();
+    correctAnswer = isPrime(number);
     console.log(`Question: ${number}`);
     answer = getUserAnswer();
     if (answer === correctAnswer) {
@@ -35,7 +39,7 @@ export function primeGame() {
     } else {
       sayWrongAnswer(answer, correctAnswer, name);
       process.exit();
-    };
+    }
   }
-  console.log(`Congratulations, ${name}!`)
+  console.log(`Congratulations, ${name}!`);
 }

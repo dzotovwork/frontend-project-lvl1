@@ -1,10 +1,16 @@
-import { getRandomInt, getUserName, getUserAnswer, sayWrongAnswer, MAX_ATTEMPTS } from "../index.js";
+import {
+  getRandomInt,
+  getUserName,
+  getUserAnswer,
+  sayWrongAnswer,
+  MAX_ATTEMPTS,
+} from '../index.js';
 
-export function progressionGame() {
+export default function progressionGame() {
   const PROGRESSION_MIN_LENGTH = 5;
   const PROGRESSION_MAX_LENGTH = 10;
   const progressionLength = getRandomInt(PROGRESSION_MAX_LENGTH) + PROGRESSION_MIN_LENGTH;
-  const name = getUserName()
+  const name = getUserName();
   let progression = null;
   let progressionStep = null;
   let correctAnswer = null;
@@ -14,24 +20,23 @@ export function progressionGame() {
   console.log('What number is missing in the progression?');
   let correctAnswerCount = 0;
   while (correctAnswerCount !== MAX_ATTEMPTS) {
-    progression = [0]
+    progression = [0];
     progressionStep = getRandomInt(10);
     for (let i = 0; i <= progressionLength; i++) {
       progression.push(progression[i] + progressionStep);
     }
     hidenIndex = getRandomInt(progressionLength);
     correctAnswer = progression[hidenIndex];
-    progression[hidenIndex] = `..`;
+    progression[hidenIndex] = '..';
     console.log(`Question: ${progression.join(' ')}`);
     answer = getUserAnswer();
-    // TODO не строго сравнение плохо
-    if (answer == correctAnswer) {
+    if (answer === correctAnswer.toString()) {
       console.log('Correct');
       correctAnswerCount++;
     } else {
       sayWrongAnswer(answer, correctAnswer, name);
       process.exit();
-    };
+    }
   }
-  console.log(`Congratulations, ${name}!`)
+  console.log(`Congratulations, ${name}!`);
 }

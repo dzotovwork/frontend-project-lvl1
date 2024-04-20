@@ -6,30 +6,33 @@ import {
   MAX_ATTEMPTS,
 } from '../index.js';
 
-function getTheDivisor(first, seccond) {
-  let a = first;
-  let b = seccond;
-  while (a !== 0 && b !== 0) {
-    if (a > b) a %= b;
-    else b %= a;
-  }
-  return a + b;
-}
-export default function gcdGame() {
+export default function calcGame() {
   const name = getUserName();
+  const operations = ['+', '-', '*'];
+  let operation = null;
   let correctAnswer = null;
   let numberA = null;
   let numberB = null;
   let answer = null;
   console.log(`Hello, ${name}!`);
-  console.log('Find the greatest common divisor of given numbers.');
-
+  console.log('What is the result of the expression?');
   let correctAnswerCount = 0;
   while (correctAnswerCount !== MAX_ATTEMPTS) {
     numberA = getRandomInt(100);
     numberB = getRandomInt(100);
-    console.log(`Question: ${numberA} ${numberB}`);
-    correctAnswer = getTheDivisor(numberA, numberB);
+    operation = operations[getRandomInt(3)];
+    switch (operation) {
+      case '+':
+        correctAnswer = numberA + numberB;
+        break;
+      case '-':
+        correctAnswer = numberA - numberB;
+        break;
+      default:
+        correctAnswer = numberA * numberB;
+        break;
+    }
+    console.log(`Question: ${numberA} ${operation} ${numberB}`);
     answer = getUserAnswer();
     if (answer === correctAnswer.toString()) {
       console.log('Correct');
