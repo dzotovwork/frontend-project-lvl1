@@ -1,4 +1,4 @@
-import { getRandomInt, getUserName, getUserAnswer, MAX_ATTEMPTS } from "../index.js";
+import { getRandomInt, getUserName, getUserAnswer, sayWrongAnswer, MAX_ATTEMPTS } from "../index.js";
 
 export function evenGame() {
   const name = getUserName();
