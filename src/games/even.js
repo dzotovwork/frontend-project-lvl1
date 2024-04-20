@@ -18,7 +18,7 @@ export function evenGame() {
       correctAnswerCount++;
     } else {
       sayWrongAnswer(answer, correctAnswer, name);
-      correctAnswerCount = 0
+      process.exit();
     };
   }
   console.log(`Congratulations, ${name}!`)
