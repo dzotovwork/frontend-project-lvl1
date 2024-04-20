@@ -22,7 +22,7 @@ export default function progressionGame() {
   while (correctAnswerCount !== MAX_ATTEMPTS) {
     progression = [0];
     progressionStep = getRandomInt(10);
-    for (let i = 0; i <= progressionLength; i++) {
+    for (let i = 0; i <= progressionLength; i += 1) {
       progression.push(progression[i] + progressionStep);
     }
     hidenIndex = getRandomInt(progressionLength);
@@ -32,7 +32,7 @@ export default function progressionGame() {
     answer = getUserAnswer();
     if (answer === correctAnswer.toString()) {
       console.log('Correct');
-      correctAnswerCount++;
+      correctAnswerCount += 1;
     } else {
       sayWrongAnswer(answer, correctAnswer, name);
       process.exit();

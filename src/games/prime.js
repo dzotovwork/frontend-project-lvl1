@@ -12,7 +12,7 @@ function isPrime(number) {
     return 'no';
   }
   // перебираем возможные делители от 2 до sqrt(n)
-  for (let d = 2; d * d <= number; d++) {
+  for (let d = 2; d * d <= number; d += 1) {
     // если разделилось нацело, то составное
     if (number % d === 0) return 'no';
   }
@@ -35,7 +35,7 @@ export default function primeGame() {
     answer = getUserAnswer();
     if (answer === correctAnswer) {
       console.log('Correct');
-      correctAnswerCount++;
+      correctAnswerCount += 1;
     } else {
       sayWrongAnswer(answer, correctAnswer, name);
       process.exit();
