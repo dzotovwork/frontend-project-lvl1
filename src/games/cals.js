@@ -1,4 +1,4 @@
-import { getRandomInt, getUserName, MAX_ATTEMPTS } from "..";
+import { getRandomInt, getUserName, MAX_ATTEMPTS, sayWrongAnswer } from "..";
 
 export function calcGame() {
   const name = getUserName()
@@ -32,9 +32,8 @@ export function calcGame() {
       console.log('Correct');
       correctAnswerCount++;
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-  Let 's try again, ${name}!`)
-      correctAnswerCount = 0
+      sayWrongAnswer(answer, correctAnswer, name);
+      correctAnswerCount = 0;
     };
   }
   console.log(`Congratulations, ${name}!`)

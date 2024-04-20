@@ -17,8 +17,7 @@ export function evenGame() {
       console.log('Correct');
       correctAnswerCount++;
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-Let 's try again, ${name}!`)
+      sayWrongAnswer(answer, correctAnswer, name);
       correctAnswerCount = 0
     };
   }
