@@ -34,7 +34,7 @@ export default function runCalcGame() {
     operation = getOperation(getRandomInt(3));
     correctAnswer = calculate(operation, numberA, numberB);
     askQuestion(`Question: ${numberA} ${operation} ${numberB}`);
-    checkAnswer(getUserAnswer(), correctAnswer.toString(), name);
+    checkAnswer(getUserAnswer(), correctAnswer, name);
     correctAnswerCount += 1;
   }
   sayCongratulations(name);
