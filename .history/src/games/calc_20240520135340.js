@@ -20,8 +20,8 @@ function getOperation(index) {
 
 export default function runCalcGame() {
   const name = getUserName();
-  let correctAnswer = null;
   let operation = null;
+  const correctAnswer = null;
   let numberA = null;
   let numberB = null;
   sayHelloUserName(name);

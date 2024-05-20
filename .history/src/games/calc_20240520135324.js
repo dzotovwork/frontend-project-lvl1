@@ -10,20 +10,21 @@ import {
   sayHelloUserName,
 } from '../index.js';
 
-function calculate(operation, a, b) {
+function calculate(operation, a,b){
   return Object.values({ '+': (() => a + b)(), '-': (() => a - b)(), '*': (() => a * b)() })[operation];
 }
 
-function getOperation(index) {
+function getOperation(index){
   return ['+', '-', '*'][index];
 }
 
 export default function runCalcGame() {
   const name = getUserName();
-  let correctAnswer = null;
   let operation = null;
+  const correctAnswer = null;
   let numberA = null;
   let numberB = null;
+  let operations = null;
   sayHelloUserName(name);
   typeTask('What is the result of the expression?');
   let correctAnswerCount = 0;
@@ -31,7 +32,7 @@ export default function runCalcGame() {
     numberA = getRandomInt(100);
     numberB = getRandomInt(100);
     operation = getOperation(getRandomInt(3));
-    correctAnswer = calculate(calculate(operation, numberA, numberB));
+    correctAnswer = calculate(calculate(operation, numberA, numberB))
     askQuestion(`Question: ${numberA} ${operation} ${numberB}`);
     checkAnswer(getUserAnswer(), correctAnswer.toString(), name);
     correctAnswerCount += 1;

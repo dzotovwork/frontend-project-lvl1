@@ -4,6 +4,10 @@ import {
   getUserAnswer,
   checkAnswer,
   MAX_ATTEMPTS,
+  sayHelloUserName,
+  typeTask,
+  askQuestion,
+  sayCongratulations
 } from '../index.js';
 
 function isPrime(number) {
@@ -22,15 +26,15 @@ function isPrime(number) {
 export default function runPrimeGame() {
   const name = getUserName();
   let number = null;
-  console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  sayHelloUserName(name);
+  typeTask('Answer "yes" if given number is prime. Otherwise answer "no".');
   let correctAnswerCount = 0;
   while (correctAnswerCount !== MAX_ATTEMPTS) {
     // +1 что б не попасть на 0
     number = getRandomInt(100) + 1;
-    console.log(`Question: ${number}`);
+    askQuestion(`Question: ${number}`);
     checkAnswer(getUserAnswer(), isPrime(number), name);
     correctAnswerCount += 1;
   }
-  console.log(`Congratulations, ${name}!`);
+  sayCongratulations(name);
 }

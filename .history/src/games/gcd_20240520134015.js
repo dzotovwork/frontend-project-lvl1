@@ -3,6 +3,10 @@ import {
   getUserName,
   getUserAnswer,
   checkAnswer,
+  sayHelloUserName,
+  typeTask,
+  askQuestion,
+  sayCongratulations,
   MAX_ATTEMPTS,
 } from '../index.js';
 
@@ -15,20 +19,20 @@ function getTheDivisor(first, seccond) {
   }
   return a + b;
 }
-export default function gcdGame() {
+export default function runGcdGame() {
   const name = getUserName();
   let numberA = null;
   let numberB = null;
-  console.log(`Hello, ${name}!`);
-  console.log('Find the greatest common divisor of given numbers.');
+  sayHelloUserName(name);
+  typeTask('Find the greatest common divisor of given numbers.');
 
   let correctAnswerCount = 0;
   while (correctAnswerCount !== MAX_ATTEMPTS) {
     numberA = getRandomInt(100);
     numberB = getRandomInt(100);
-    console.log(`Question: ${numberA} ${numberB}`);
+    askQuestion(`Question: ${numberA} ${numberB}`);
     checkAnswer(getUserAnswer(), getTheDivisor(numberA, numberB).toString(), name);
     correctAnswerCount += 1;
   }
-  console.log(`Congratulations, ${name}!`);
+  sayCongratulations(name);
 }

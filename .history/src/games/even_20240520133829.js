@@ -2,10 +2,6 @@ import {
   getRandomInt,
   getUserName,
   getUserAnswer,
-  sayCongratulations,
-  askQuestion,
-  sayHelloUserName,
-  typeTask,
   checkAnswer,
   MAX_ATTEMPTS,
 } from '../index.js';

@@ -10,6 +10,10 @@ export function getUserName() {
 May I have your name? `);
 }
 
+export function sayHelloUserName(userName) {
+  console.log(`Hello, ${userName}!`);
+}
+
 export function getUserAnswer() {
   return readlineSync.question('Your answer: ');
 }
