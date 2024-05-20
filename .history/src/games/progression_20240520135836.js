@@ -1,4 +1,5 @@
 import {
+  getRandomInt,
   getUserName,
   getUserAnswer,
   typeTask,
@@ -6,10 +7,8 @@ import {
   askQuestion,
   sayCongratulations,
   checkAnswer,
-  PROGRESSION_TASK_TEXT,
   MAX_ATTEMPTS,
 } from '../index.js';
-import getRandomInt from '../utils.js';
 
 export default function runProgressionGame() {
   const PROGRESSION_MIN_LENGTH = 5;
@@ -21,7 +20,7 @@ export default function runProgressionGame() {
   let correctAnswer = null;
   let hidenIndex = null;
   sayHelloUserName(name);
-  typeTask(PROGRESSION_TASK_TEXT);
+  typeTask();
   let correctAnswerCount = 0;
   while (correctAnswerCount !== MAX_ATTEMPTS) {
     progression = [0];

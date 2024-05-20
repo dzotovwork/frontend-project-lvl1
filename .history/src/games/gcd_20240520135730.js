@@ -1,4 +1,5 @@
 import {
+  getRandomInt,
   getUserName,
   getUserAnswer,
   checkAnswer,
@@ -7,9 +8,7 @@ import {
   askQuestion,
   sayCongratulations,
   MAX_ATTEMPTS,
-  GCD_TASK_TEXT,
 } from '../index.js';
-import getRandomInt from '../utils.js';
 
 function getTheDivisor(first, seccond) {
   let a = first;
@@ -25,7 +24,7 @@ export default function runGcdGame() {
   let numberA = null;
   let numberB = null;
   sayHelloUserName(name);
-  typeTask(GCD_TASK_TEXT);
+  typeTask();
 
   let correctAnswerCount = 0;
   while (correctAnswerCount !== MAX_ATTEMPTS) {

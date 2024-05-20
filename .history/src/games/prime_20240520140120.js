@@ -7,10 +7,9 @@ import {
   typeTask,
   askQuestion,
   sayCongratulations,
-  PRIME_TASK_TEXT,
+  PRIME_TASK_TEXT
 } from '../index.js';
-import getRandomInt from '../utils.js';
-
+import {getRandomInt} from '../utils.js'
 function isPrime(number) {
   // 1 - не простое число
   if (number === 1) {

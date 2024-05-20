@@ -1,4 +1,5 @@
 import {
+  getRandomInt,
   getUserName,
   getUserAnswer,
   typeTask,
@@ -9,7 +10,6 @@ import {
   PROGRESSION_TASK_TEXT,
   MAX_ATTEMPTS,
 } from '../index.js';
-import getRandomInt from '../utils.js';
 
 export default function runProgressionGame() {
   const PROGRESSION_MIN_LENGTH = 5;

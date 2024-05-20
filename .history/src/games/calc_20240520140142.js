@@ -1,5 +1,4 @@
-import {
-  getUserName,
+import {  getUserName,
   sayCongratulations,
   typeTask,
   askQuestion,
@@ -9,7 +8,6 @@ import {
   CALC_TASK_TEXT,
   sayHelloUserName,
 } from '../index.js';
-import getRandomInt from '../utils.js';
 
 function calculate(operation, a, b) {
   return Object.values({ '+': (() => a + b)(), '-': (() => a - b)(), '*': (() => a * b)() })[operation];

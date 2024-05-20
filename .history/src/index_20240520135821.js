@@ -5,7 +5,9 @@ export const CALC_TASK_TEXT = 'What is the result of the expression?';
 export const EVEN_TASK_TEXT = 'Answer "yes" if the number is even, otherwise answer "no".';
 export const GCD_TASK_TEXT = 'Find the greatest common divisor of given numbers.';
 export const PRIME_TASK_TEXT = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-export const PROGRESSION_TASK_TEXT = 'What number is missing in the progression?';
+export function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
 
 export function getUserName() {
   return readlineSync.question(`Welcome to the Brain Games!

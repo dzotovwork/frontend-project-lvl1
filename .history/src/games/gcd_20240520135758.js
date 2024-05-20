@@ -1,4 +1,5 @@
 import {
+  getRandomInt,
   getUserName,
   getUserAnswer,
   checkAnswer,
@@ -7,9 +8,8 @@ import {
   askQuestion,
   sayCongratulations,
   MAX_ATTEMPTS,
-  GCD_TASK_TEXT,
+  GCD_TASK_TEXT
 } from '../index.js';
-import getRandomInt from '../utils.js';
 
 function getTheDivisor(first, seccond) {
   let a = first;

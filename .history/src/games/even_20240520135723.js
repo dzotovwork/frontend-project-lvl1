@@ -1,4 +1,5 @@
 import {
+  getRandomInt,
   getUserName,
   getUserAnswer,
   sayCongratulations,
@@ -6,11 +7,8 @@ import {
   sayHelloUserName,
   typeTask,
   checkAnswer,
-  EVEN_TASK_TEXT,
   MAX_ATTEMPTS,
 } from '../index.js';
-
-import getRandomInt from '../utils.js';
 
 export default function runEvenGame() {
   const name = getUserName();

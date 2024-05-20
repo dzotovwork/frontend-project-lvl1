@@ -10,7 +10,7 @@ import {
   MAX_ATTEMPTS,
 } from '../index.js';
 
-import getRandomInt from '../utils.js';
+import { getRandomInt } from '../utils.js';
 
 export default function runEvenGame() {
   const name = getUserName();

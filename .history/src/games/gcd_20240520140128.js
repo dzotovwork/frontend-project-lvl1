@@ -7,10 +7,9 @@ import {
   askQuestion,
   sayCongratulations,
   MAX_ATTEMPTS,
-  GCD_TASK_TEXT,
+  GCD_TASK_TEXT
 } from '../index.js';
-import getRandomInt from '../utils.js';
-
+import {getRandomInt} from '../utils.js'
 function getTheDivisor(first, seccond) {
   let a = first;
   let b = seccond;

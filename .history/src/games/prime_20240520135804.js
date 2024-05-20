@@ -1,4 +1,5 @@
 import {
+  getRandomInt,
   getUserName,
   getUserAnswer,
   checkAnswer,
@@ -7,9 +8,7 @@ import {
   typeTask,
   askQuestion,
   sayCongratulations,
-  PRIME_TASK_TEXT,
 } from '../index.js';
-import getRandomInt from '../utils.js';
 
 function isPrime(number) {
   // 1 - не простое число
@@ -28,7 +27,7 @@ export default function runPrimeGame() {
   const name = getUserName();
   let number = null;
   sayHelloUserName(name);
-  typeTask(PRIME_TASK_TEXT);
+  typeTask();
   let correctAnswerCount = 0;
   while (correctAnswerCount !== MAX_ATTEMPTS) {
     // +1 что б не попасть на 0
