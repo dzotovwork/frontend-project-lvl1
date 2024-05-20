@@ -15,7 +15,7 @@ function getTheDivisor(first, seccond) {
   }
   return a + b;
 }
-export default function runGcdGame() {
+export default function gcdGame() {
   const name = getUserName();
   let numberA = null;
   let numberB = null;

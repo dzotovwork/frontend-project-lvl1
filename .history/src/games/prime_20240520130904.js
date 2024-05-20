@@ -19,7 +19,7 @@ function isPrime(number) {
   // если нет нетривиальных делителей, то простое
   return 'yes';
 }
-export default function runPrimeGame() {
+export default function primeGame() {
   const name = getUserName();
   let number = null;
   console.log(`Hello, ${name}!`);

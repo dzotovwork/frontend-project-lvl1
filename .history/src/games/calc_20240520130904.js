@@ -6,7 +6,7 @@ import {
   MAX_ATTEMPTS,
 } from '../index.js';
 
-export default function runCalcGame() {
+export default function calcGame() {
   const name = getUserName();
   // можно так попробовать const operations = {'+':(()=> a+b)(),'-':(()=> a-b)(),'*':(()=> a*b)()};
   // и потом correctAnswer = operations[operation] вместо свитча

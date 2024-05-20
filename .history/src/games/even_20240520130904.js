@@ -6,7 +6,7 @@ import {
   MAX_ATTEMPTS,
 } from '../index.js';
 
-export default function runEvenGame() {
+export default function evenGame() {
   const name = getUserName();
   let number = null;
   console.log(`Hello, ${name}!`);

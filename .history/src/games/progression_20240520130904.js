@@ -6,7 +6,7 @@ import {
   MAX_ATTEMPTS,
 } from '../index.js';
 
-export default function runProgressionGame() {
+export default function progressionGame() {
   const PROGRESSION_MIN_LENGTH = 5;
   const PROGRESSION_MAX_LENGTH = 10;
   const progressionLength = getRandomInt(PROGRESSION_MAX_LENGTH) + PROGRESSION_MIN_LENGTH;
